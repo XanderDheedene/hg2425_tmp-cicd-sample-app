@@ -3,6 +3,7 @@ node {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning'
             sh 'docker rm samplerunning'
+            sh 'docker image prune -a'
         }
     }
     stage('Build') {
